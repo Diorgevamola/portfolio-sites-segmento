@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumière · Estética Avançada & Harmonização Facial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e0c0b; --ink2:#171311; --cream:#f4ede2; --cream-dim:#c7bcab;
+    --gold:#c9a86a; --gold-soft:#e3cf9f; --line:rgba(201,168,106,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--cream);font-family:'Jost',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-.01em}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);
+    background:linear-gradient(180deg,rgba(14,12,11,.92),rgba(14,12,11,.45));border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1180px;margin:0 auto}
+  .brand{font-family:'Fraunces',serif;font-size:1.5rem;letter-spacing:.04em}
+  .brand b{color:var(--gold);font-weight:500}
+  .navlinks{display:flex;gap:34px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+  .navlinks a{opacity:.78;transition:.25s}.navlinks a:hover{opacity:1;color:var(--gold-soft)}
+  .btn{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    padding:13px 26px;border:1px solid var(--gold);color:var(--gold-soft);border-radius:2px;transition:.3s;font-weight:400}
+  .btn:hover{background:var(--gold);color:var(--ink);box-shadow:0 8px 30px rgba(201,168,106,.25)}
+  .btn-solid{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .btn-solid:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+  @media(max-width:820px){.navlinks{display:none}}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:90px;
+    background:radial-gradient(120% 90% at 80% 10%,#231b14 0%,var(--ink) 55%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;width:100%}
+  .hero-copy .eyebrow{opacity:0;animation:rise .9s .1s forwards}
+  .hero h1{font-size:clamp(2.8rem,6vw,5.1rem);line-height:1.02;margin:22px 0 24px;font-weight:300}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero h1 .ln{display:block;opacity:0;animation:rise 1s forwards}
+  .hero h1 .ln:nth-child(1){animation-delay:.2s}.hero h1 .ln:nth-child(2){animation-delay:.35s}.hero h1 .ln:nth-child(3){animation-delay:.5s}
+  .hero p.lead{font-size:1.08rem;color:var(--cream-dim);max-width:440px;margin-bottom:34px;opacity:0;animation:rise 1s .65s forwards}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:rise 1s .8s forwards}
+  .hero-visual{position:relative;opacity:0;animation:fade 1.4s .4s forwards}
+  .hero-visual .frame{position:relative;border-radius:200px 200px 12px 12px;overflow:hidden;
+    aspect-ratio:3/4;box-shadow:0 40px 90px rgba(0,0,0,.55)}
+  .hero-visual img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.03)}
+  .hero-visual .frame:after{content:"";position:absolute;inset:0;border:1px solid var(--line);border-radius:inherit;
+    box-shadow:inset 0 0 80px rgba(14,12,11,.4)}
+  .badge{position:absolute;left:-26px;bottom:48px;background:var(--ink2);border:1px solid var(--line);
+    padding:18px 22px;border-radius:6px;backdrop-filter:blur(6px)}
+  .badge .n{font-family:'Fraunces',serif;font-size:2rem;color:var(--gold);line-height:1}
+  .badge .t{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-dim);margin-top:6px}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:38px}.hero-visual{max-width:420px;margin:0 auto}.badge{left:0}}
+
+  /* TRUST STRIP */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;background:var(--ink2)}
+  .trust .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+  .trust span{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-dim)}
+  .trust b{color:var(--gold);font-weight:500}
+
+  /* SECTION */
+  section.pad{padding:110px 0}
+  .sechead{text-align:center;max-width:640px;margin:0 auto 64px}
+  .sechead h2{font-size:clamp(2rem,4vw,3.1rem);margin:16px 0 0;font-weight:300}
+  .sechead h2 em{font-style:italic;color:var(--gold-soft)}
+
+  /* SERVICES */
+  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{border:1px solid var(--line);border-radius:8px;padding:38px 30px;background:linear-gradient(180deg,rgba(35,27,20,.5),rgba(23,19,17,.2));
+    transition:.4s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+  .card .ic{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--gold);width:54px;height:54px;border:1px solid var(--line);
+    border-radius:50%;display:grid;place-items:center;margin-bottom:24px}
+  .card h3{font-size:1.4rem;margin-bottom:10px}
+  .card p{color:var(--cream-dim);font-size:.95rem}
+  .card .price{margin-top:20px;font-family:'Fraunces',serif;color:var(--gold-soft);font-size:1.05rem}
+  @media(max-width:820px){.svc{grid-template-columns:1fr}}
+
+  /* SIGNATURE SPLIT */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .split .imgwrap{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5}
+  .split img{width:100%;height:100%;object-fit:cover}
+  .split h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;margin:14px 0 22px}
+  .split h2 em{font-style:italic;color:var(--gold-soft)}
+  .split ul{list-style:none;margin:24px 0 32px}
+  .split li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:flex-start;color:var(--cream-dim)}
+  .split li:before{content:"—";color:var(--gold)}
+  @media(max-width:820px){.split{grid-template-columns:1fr;gap:34px}}
+
+  /* STATS */
+  .stats{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:64px 28px;text-align:center}
+  .stat .n{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5vw,3.6rem);color:var(--gold);line-height:1}
+  .stat .t{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-dim);margin-top:10px}
+  @media(max-width:680px){.stats .wrap{grid-template-columns:1fr 1fr;gap:40px 16px}}
+
+  /* QUOTE */
+  .quote{text-align:center;max-width:840px;margin:0 auto}
+  .quote p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.5rem,3.4vw,2.4rem);font-weight:300;line-height:1.4}
+  .quote .who{margin-top:26px;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+  /* CTA */
+  .cta{position:relative;text-align:center;padding:120px 0;background:radial-gradient(100% 100% at 50% 0%,#241a12,var(--ink))}
+  .cta h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:300;margin-bottom:20px}
+  .cta h2 em{font-style:italic;color:var(--gold-soft)}
+  .cta p{color:var(--cream-dim);max-width:480px;margin:0 auto 38px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:60px 0 40px;background:var(--ink2)}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  footer .brand{margin-bottom:16px}
+  footer p,footer a{color:var(--cream-dim);font-size:.92rem}
+  footer h4{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  footer .col a{display:block;margin-bottom:10px;transition:.2s}footer .col a:hover{color:var(--gold-soft)}
+  .copy{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:.8rem;color:var(--cream-dim);letter-spacing:.08em}
+  @media(max-width:820px){.foot{grid-template-columns:1fr;gap:28px}}
+
+  /* WhatsApp float */
+  .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;
+    background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:.3s}
+  .wa:hover{transform:scale(1.08)}
+  .wa svg{width:30px;height:30px;fill:#fff}
+
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Lumi<b>è</b>re</div>
+    <div class="navlinks">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#assinatura">Protocolo</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a href="#contato" class="btn">Agendar avaliação</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Estética Avançada · Harmonização Facial</div>
+      <h1>
+        <span class="ln">A beleza que</span>
+        <span class="ln"><em>já existe</em> em você,</span>
+        <span class="ln">revelada.</span>
+      </h1>
+      <p class="lead">Protocolos faciais personalizados com tecnologia de ponta e mãos especialistas. Naturalidade, sofisticação e resultados que respeitam a sua essência.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn btn-solid">Agendar minha avaliação</a>
+        <a href="#tratamentos" class="btn">Ver tratamentos</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame"><img src="./assets/u_face_model.jpg" alt="Harmonização facial"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <span><b>★ 4,9</b> · 320+ avaliações</span>
+    <span>Produtos <b>premium importados</b></span>
+    <span>Profissionais <b>certificados</b></span>
+    <span>Ambiente <b>exclusivo & reservado</b></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="pad" id="tratamentos">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">O que fazemos</div>
+      <h2>Protocolos <em>sob medida</em> para o seu rosto</h2>
+    </div>
+    <div class="svc">
+      <div class="card">
+        <div class="ic">i</div>
+        <h3>Harmonização Facial</h3>
+        <p>Preenchimento, toxina e bioestimuladores para contornos equilibrados e expressão preservada.</p>
+        <div class="price">a partir de R$ 690</div>
+      </div>
+      <div class="card">
+        <div class="ic">ii</div>
+        <h3>Skinbooster & Glow</h3>
+        <p>Hidratação profunda e viço de dentro para fora. Aquela pele de vidro que ilumina sem maquiagem.</p>
+        <div class="price">a partir de R$ 480</div>
+      </div>
+      <div class="card">
+        <div class="ic">iii</div>
+        <h3>Limpeza Premium</h3>
+        <p>Protocolo completo de renovação, extração e nutrição com ativos de alta performance.</p>
+        <div class="price">a partir de R$ 250</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE -->
+<section class="pad" id="assinatura" style="background:var(--ink2)">
+  <div class="wrap split">
+    <div class="imgwrap"><img src="./assets/u_facial1.jpg" alt="Protocolo de assinatura"></div>
+    <div>
+      <div class="eyebrow">Protocolo de assinatura</div>
+      <h2>O ritual <em>Lumière</em></h2>
+      <p style="color:var(--cream-dim)">Uma experiência sensorial de 90 minutos que combina diagnóstico de pele, tecnologia e toque humano. Cada detalhe pensado para que você saia se sentindo renovada.</p>
+      <ul>
+        <li>Diagnóstico facial individual com mapeamento de pele</li>
+        <li>Combinação de ativos exclusivos para o seu objetivo</li>
+        <li>Acompanhamento e plano de manutenção personalizado</li>
+        <li>Café, espumante e um ambiente só seu</li>
+      </ul>
+      <a href="#contato" class="btn btn-solid">Quero viver o ritual</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats" id="resultados">
+  <div class="wrap">
+    <div class="stat"><div class="n">2.500+</div><div class="t">rostos atendidos</div></div>
+    <div class="stat"><div class="n">98%</div><div class="t">recomendariam</div></div>
+    <div class="stat"><div class="n">90min</div><div class="t">de ritual completo</div></div>
+    <div class="stat"><div class="n">4,9★</div><div class="t">avaliação média</div></div>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<section class="pad">
+  <div class="wrap quote">
+    <p>"Saí de lá parecendo eu mesma, só que descansada. Ninguém percebeu o procedimento — percebem que eu estou diferente."</p>
+    <div class="who">Marina R. · cliente desde 2022</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contato">
+  <div class="wrap">
+    <div class="eyebrow">Vagas limitadas por semana</div>
+    <h2>Sua avaliação <em>cortesia</em> está reservada</h2>
+    <p>Converse com nossa equipe pelo WhatsApp e encontre o melhor horário. Sem compromisso.</p>
+    <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20na%20Lumi%C3%A8re" class="btn btn-solid">Falar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand">Lumi<b>è</b>re</div>
+        <p>Estética avançada & harmonização facial. Naturalidade com assinatura.</p>
+      </div>
+      <div class="col">
+        <h4>Navegação</h4>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#assinatura">Protocolo</a>
+        <a href="#resultados">Resultados</a>
+      </div>
+      <div class="col">
+        <h4>Contato</h4>
+        <a href="#">Av. das Acácias, 1200 — sala 8</a>
+        <a href="#">(00) 90000-0000</a>
+        <a href="#">Seg a Sáb · 9h às 19h</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 Lumière Estética · Site exemplo</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5599999999999" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.99-1.045zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+</body>
+</html>

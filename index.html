@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio de Sites · Modelos por Segmento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#11100e;--panel:#1a1714;--ink:#f2ece2;--muted:#b3a690;--gold:#c9a86a;--line:rgba(201,168,106,.22)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;min-height:100vh}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  a{text-decoration:none;color:inherit}
+  .eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .top{text-align:center;padding:70px 24px 46px;border-bottom:1px solid var(--line);background:radial-gradient(120% 100% at 50% 0%,#231b14,var(--bg))}
+  .top h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.1rem,5vw,3.4rem);margin:14px 0 12px}
+  .top h1 em{font-style:italic;color:var(--gold)}
+  .top p{color:var(--muted);max-width:640px;margin:0 auto;font-size:1.05rem}
+  .top .count{display:inline-flex;gap:22px;margin-top:24px;flex-wrap:wrap;justify-content:center;font-size:.82rem;color:var(--muted)}
+  .top .count b{color:var(--gold);font-family:'Fraunces',serif;font-size:1.1rem}
+
+  .cat{padding:58px 0 4px}
+  .cathead{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:34px}
+  .cathead h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.6rem,3.4vw,2.3rem)}
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .tag{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:30px;padding:5px 12px}
+  .meta{font-size:.84rem;color:var(--muted);text-align:right}.meta b{color:var(--gold)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);transition:.3s}
+  .card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 24px 50px rgba(0,0,0,.5)}
+  .imgbox{position:relative;height:200px;overflow:hidden;border-bottom:1px solid var(--line)}
+  .imgbox img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .style{position:absolute;top:12px;left:12px;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(17,16,14,.82);border:1px solid var(--line);color:var(--gold);padding:5px 11px;border-radius:30px;backdrop-filter:blur(4px)}
+  .b{padding:22px;display:flex;flex-direction:column;flex:1}
+  .b h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.4rem}
+  .desc{color:var(--muted);font-size:.9rem;margin:6px 0 14px}
+  .ideal{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+  .clients{list-style:none;font-size:.9rem;margin-bottom:18px}
+  .clients li{padding:4px 0 4px 16px;position:relative;color:#d8cdbb}
+  .clients li:before{content:"›";position:absolute;left:0;color:var(--gold)}
+  .open{margin-top:auto;text-align:center;border:1px solid var(--gold);color:var(--gold);padding:11px;border-radius:4px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;transition:.3s}
+  .open:hover{background:var(--gold);color:var(--bg)}
+  .foot{text-align:center;padding:60px 24px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line);margin-top:60px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="eyebrow">Portfólio de modelos</div>
+  <h1>Sites profissionais por <em>segmento</em></h1>
+  <p>Veja exemplos de sites prontos para o seu tipo de negócio. Escolha o estilo que mais combina com você — o seu fica assim.</p>
+  <div class="count"><span><b>13</b> modelos</span><span><b>4</b> segmentos</span><span><b>Entrega</b> rápida</span></div>
+</div>
+
+<div class="wrap">
+
+  <!-- SAÚDE & ESTÉTICA -->
+  <section class="cat">
+    <div class="cathead">
+      <div>
+        <div class="eyebrow">Categoria 01</div>
+        <h2>Saúde & Estética</h2>
+        <div class="pillrow"><span class="tag">Clínicas</span><span class="tag">Consultórios</span><span class="tag">Bem-estar</span></div>
+      </div>
+      <div class="meta"><b>7 modelos</b></div>
+    </div>
+    <div class="grid">
+      <a class="card" href="01-lumiere-estetica-avancada.html"><div class="imgbox"><span class="style">Luxo · Dourado</span><img src="_preview-01-lumiere-estetica-avancada.png"></div><div class="b"><h3>Lumière</h3><div class="desc">Estética avançada e harmonização facial.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Harmonização facial</li><li>Biomédico esteta</li><li>Estética premium</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="02-derma-clinica-pele.html"><div class="imgbox"><span class="style">Clean · Clínico</span><img src="_preview-02-derma-clinica-pele.png"></div><div class="b"><h3>Dérma</h3><div class="desc">Clínica de pele e dermatologia estética.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Dermatologista</li><li>Clínica de pele/acne</li><li>Laser e rejuvenescimento</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="03-belle-studio-skincare.html"><div class="imgbox"><span class="style">Editorial · Nude</span><img src="_preview-03-belle-studio-skincare.png"></div><div class="b"><h3>Belle</h3><div class="desc">Studio de skincare e estética feminina.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Esteticista / studio</li><li>Sobrancelha & lash</li><li>Spa / day spa</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="04-dentista.html"><div class="imgbox"><span class="style">Clean · Teal</span><img src="_preview-04-dentista.png"></div><div class="b"><h3>OdontoVita</h3><div class="desc">Clínica odontológica moderna.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Dentista</li><li>Clínica odontológica</li><li>Ortodontia</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="05-fisioterapia.html"><div class="imgbox"><span class="style">Clean · Verde</span><img src="_preview-05-fisioterapia.png"></div><div class="b"><h3>Movimente</h3><div class="desc">Fisioterapia e pilates clínico.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Fisioterapeuta</li><li>Pilates clínico</li><li>Fisio esportiva</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="06-nutricao.html"><div class="imgbox"><span class="style">Editorial · Verde</span><img src="_preview-06-nutricao.png"></div><div class="b"><h3>Nutre</h3><div class="desc">Nutrição e bem-estar.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Nutricionista</li><li>Nutrição esportiva</li><li>Reeducação alimentar</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="07-psicologia.html"><div class="imgbox"><span class="style">Editorial · Lilás</span><img src="_preview-07-psicologia.png"></div><div class="b"><h3>Acolher</h3><div class="desc">Psicologia e terapia.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Psicólogo</li><li>Terapeuta</li><li>Terapia de casal</li></ul><span class="open">Abrir site →</span></div></a>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS ALTO GIRO -->
+  <section class="cat">
+    <div class="cathead">
+      <div>
+        <div class="eyebrow">Categoria 02</div>
+        <h2>Serviços & Reformas</h2>
+        <div class="pillrow"><span class="tag">Orçamento online</span><span class="tag">Portfólio de trabalhos</span><span class="tag">Contato direto</span></div>
+      </div>
+      <div class="meta"><b>3 modelos</b></div>
+    </div>
+    <div class="grid">
+      <a class="card" href="08-automotiva.html"><div class="imgbox"><span class="style">Dark · Vermelho</span><img src="_preview-08-automotiva.png"></div><div class="b"><h3>Apex Detail</h3><div class="desc">Estética automotiva premium.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Estética automotiva</li><li>Polimento / vitrificação</li><li>Película / envelopamento</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="09-reforma.html"><div class="imgbox"><span class="style">Dark · Âmbar</span><img src="_preview-09-reforma.png"></div><div class="b"><h3>Construrte</h3><div class="desc">Reformas e construção.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Empresa de reforma</li><li>Construtora pequena</li><li>Drywall / gesso</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="10-climatizacao.html"><div class="imgbox"><span class="style">Clean · Azul</span><img src="_preview-10-climatizacao.png"></div><div class="b"><h3>FrioMax</h3><div class="desc">Climatização e ar-condicionado.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Instalação de ar</li><li>Manutenção / PMOC</li><li>Refrigeração</li></ul><span class="open">Abrir site →</span></div></a>
+    </div>
+  </section>
+
+  <!-- PROFISSIONAIS -->
+  <section class="cat">
+    <div class="cathead">
+      <div>
+        <div class="eyebrow">Categoria 03</div>
+        <h2>Profissionais</h2>
+        <div class="pillrow"><span class="tag">Autoridade</span><span class="tag">Credibilidade</span></div>
+      </div>
+      <div class="meta"><b>2 modelos</b></div>
+    </div>
+    <div class="grid">
+      <a class="card" href="11-advogado.html"><div class="imgbox"><span class="style">Dark · Navy/Dourado</span><img src="_preview-11-advogado.png"></div><div class="b"><h3>Drummond</h3><div class="desc">Advocacia e consultoria jurídica.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Advogado</li><li>Escritório de advocacia</li><li>Consultoria jurídica</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="12-arquiteto.html"><div class="imgbox"><span class="style">Light · Minimal</span><img src="_preview-12-arquiteto.png"></div><div class="b"><h3>Estúdio Linha</h3><div class="desc">Arquitetura e interiores.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Arquiteto</li><li>Designer de interiores</li><li>Estúdio de projetos</li></ul><span class="open">Abrir site →</span></div></a>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section class="cat">
+    <div class="cathead">
+      <div>
+        <div class="eyebrow">Categoria 04</div>
+        <h2>Eventos</h2>
+        <div class="pillrow"><span class="tag">Vitrine de trabalhos</span><span class="tag">Galeria de fotos</span></div>
+      </div>
+      <div class="meta"><b>1 modelo</b></div>
+    </div>
+    <div class="grid">
+      <a class="card" href="13-fotografia.html"><div class="imgbox"><span class="style">Dark · Dourado</span><img src="_preview-13-fotografia.png"></div><div class="b"><h3>Lentes & Luz</h3><div class="desc">Fotografia profissional.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Fotógrafo</li><li>Casamentos / ensaios</li><li>Eventos & corporativo</li></ul><span class="open">Abrir site →</span></div></a>
+    </div>
+  </section>
+
+</div>
+
+<div class="foot">Modelos de demonstração · seu site é personalizado com a sua marca, suas cores e seu conteúdo</div>
+
+</body>
+</html>

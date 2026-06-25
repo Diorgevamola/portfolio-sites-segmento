@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belle · Studio de Skincare & Estética</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4eae3; --paper2:#efe2d8; --ink:#2b211c; --muted:#7a6a60;
+    --rose:#c47e76; --rose-d:#a85f57; --terra:#caa06b; --line:#e0cfc2; --card:#fbf5ef;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden}
+  h1,h2,h3,.disp{font-family:'Playfair Display',serif;font-weight:400;line-height:1.08}
+  img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose-d);font-weight:600}
+  .btn{display:inline-block;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:15px 30px;border-radius:2px;transition:.3s}
+  .btn-p{background:var(--ink);color:var(--paper)}.btn-p:hover{background:var(--rose-d);transform:translateY(-2px)}
+  .btn-o{border:1px solid var(--ink);color:var(--ink)}.btn-o:hover{background:var(--ink);color:var(--paper)}
+
+  header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(244,234,227,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;max-width:1140px;margin:0 auto}
+  .brand{font-family:'Playfair Display';font-size:1.7rem;font-style:italic;letter-spacing:.02em}
+  .brand b{font-style:normal;font-weight:500}
+  .navlinks{display:flex;gap:32px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .navlinks a{color:var(--muted);transition:.2s}.navlinks a:hover{color:var(--rose-d)}
+  @media(max-width:860px){.navlinks{display:none}}
+
+  /* HERO editorial */
+  .hero{padding:128px 0 60px;position:relative}
+  .hero:before{content:"";position:absolute;top:120px;right:-120px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,rgba(196,126,118,.18),transparent 70%);z-index:0}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:1}
+  .hero h1{font-size:clamp(3rem,7vw,5.6rem);margin:24px 0 26px}
+  .hero h1 em{font-style:italic;color:var(--rose-d)}
+  .hero p.lead{font-size:1.1rem;color:var(--muted);max-width:430px;margin-bottom:32px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero-art{position:relative}
+  .hero-art .big{border-radius:280px 280px 14px 14px;overflow:hidden;aspect-ratio:3/4}
+  .hero-art .big img{width:100%;height:100%;object-fit:cover;filter:saturate(.96)}
+  .hero-art .small{position:absolute;left:-40px;bottom:-30px;width:46%;border-radius:12px;overflow:hidden;
+    aspect-ratio:1/1;border:6px solid var(--paper);box-shadow:0 20px 44px rgba(43,33,28,.18)}
+  .hero-art .small img{width:100%;height:100%;object-fit:cover}
+  .hero-art .seal{position:absolute;right:-18px;top:-18px;width:104px;height:104px;border-radius:50%;background:var(--rose);color:#fff;
+    display:grid;place-items:center;text-align:center;font-family:'Playfair Display';font-style:italic;font-size:.92rem;line-height:1.2;
+    transform:rotate(8deg);box-shadow:0 14px 30px rgba(196,126,118,.4)}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:60px}.hero-art{max-width:400px;margin:0 auto}}
+
+  .marquee{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:14px 0}
+  .marquee div{display:inline-block;animation:scroll 22s linear infinite;font-family:'Playfair Display';font-style:italic;font-size:1.15rem}
+  .marquee span{margin:0 26px;opacity:.92}.marquee span:before{content:"✦";margin-right:26px;color:var(--terra);font-style:normal}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  section.pad{padding:100px 0}
+  .sechead{max-width:580px;margin:0 auto 58px;text-align:center}
+  .sechead h2{font-size:clamp(2.2rem,4.6vw,3.4rem);margin-top:12px}
+  .sechead h2 em{font-style:italic;color:var(--rose-d)}
+
+  /* menu de servicos editorial */
+  .menu{max-width:780px;margin:0 auto}
+  .mitem{display:flex;align-items:baseline;gap:18px;padding:26px 0;border-bottom:1px solid var(--line);transition:.3s}
+  .mitem:hover{padding-left:12px}
+  .mitem .nm{font-family:'Playfair Display';font-size:1.5rem}
+  .mitem .ds{color:var(--muted);font-size:.92rem;flex:1}
+  .mitem .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+  .mitem .pr{font-family:'Playfair Display';font-style:italic;color:var(--rose-d);font-size:1.2rem;white-space:nowrap}
+  @media(max-width:680px){.mitem{flex-wrap:wrap;gap:6px}.mitem .dots{display:none}.mitem .ds{flex:1 1 100%}}
+
+  /* feature split */
+  .feat{background:var(--paper2)}
+  .feat .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:96px 26px}
+  .feat .imgwrap{border-radius:14px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 50px rgba(43,33,28,.14)}
+  .feat img{width:100%;height:100%;object-fit:cover}
+  .feat h2{font-size:clamp(2rem,4.4vw,3rem);margin:14px 0 18px}
+  .feat h2 em{font-style:italic;color:var(--rose-d)}
+  .feat p{color:var(--muted)}
+  .feat .pts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+  .feat .pt b{font-family:'Playfair Display';display:block;font-size:1.6rem;color:var(--rose-d)}
+  .feat .pt span{font-size:.86rem;color:var(--muted)}
+  @media(max-width:860px){.feat .wrap{grid-template-columns:1fr;gap:36px}}
+
+  /* testimonial cards */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px}
+  .tcard .stars{color:var(--terra);letter-spacing:3px;margin-bottom:14px}
+  .tcard p{font-family:'Playfair Display';font-style:italic;font-size:1.05rem;line-height:1.5}
+  .tcard .who{margin-top:18px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  @media(max-width:860px){.tgrid{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta{text-align:center;padding:110px 0;position:relative;background:
+    radial-gradient(80% 120% at 50% 0%,var(--paper2),var(--paper))}
+  .cta h2{font-size:clamp(2.4rem,5.4vw,3.8rem);margin-bottom:18px}
+  .cta h2 em{font-style:italic;color:var(--rose-d)}
+  .cta p{color:var(--muted);max-width:440px;margin:0 auto 34px}
+
+  footer{background:var(--ink);color:var(--paper);padding:64px 0 36px}
+  .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:38px}
+  footer .brand{margin-bottom:14px}
+  footer p,footer a{color:#d8c6ba;font-size:.92rem}
+  footer h4{font-family:'Playfair Display';font-style:italic;font-size:1.15rem;margin-bottom:14px;color:var(--paper)}
+  footer .col a{display:block;margin-bottom:9px;transition:.2s}footer .col a:hover{color:var(--rose)}
+  .copy{margin-top:42px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:.82rem;color:#b7a293;letter-spacing:.06em}
+  @media(max-width:860px){.foot{grid-template-columns:1fr;gap:26px}}
+
+  .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:.3s}
+  .wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><b>Belle</b> studio</div>
+    <div class="navlinks">
+      <a href="#servicos">Serviços</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Agendar</a>
+    </div>
+    <a href="#contato" class="btn btn-p">Agendar horário</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Studio de Skincare & Estética</div>
+      <h1>Sua pele no seu <em>melhor</em> momento.</h1>
+      <p class="lead">Um cantinho só seu para cuidar da pele com carinho, técnica e aquela pausa que você merece. Resultados visíveis, experiência inesquecível.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn btn-p">Reservar meu horário</a>
+        <a href="#servicos" class="btn btn-o">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="big"><img src="./assets/u_serum.jpg" alt="Skincare natural"></div>
+      <div class="small"><img src="./assets/p_massage.jpg" alt="Massagem facial"></div>
+      <div class="seal">pele<br>de<br>vidro</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div>
+    <span>Limpeza de pele</span><span>Peeling</span><span>Massagem facial</span><span>Design de sobrancelha</span><span>Skincare</span><span>Microagulhamento</span>
+    <span>Limpeza de pele</span><span>Peeling</span><span>Massagem facial</span><span>Design de sobrancelha</span><span>Skincare</span><span>Microagulhamento</span>
+  </div>
+</div>
+
+<!-- SERVICES menu -->
+<section class="pad" id="servicos">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">Nosso cardápio</div>
+      <h2>Rituais de <em>autocuidado</em></h2>
+    </div>
+    <div class="menu">
+      <div class="mitem"><span class="nm">Limpeza de Pele Profunda</span><span class="dots"></span><span class="pr">R$ 180</span></div>
+      <div class="mitem"><span class="nm">Peeling Renovador</span><span class="dots"></span><span class="pr">R$ 220</span></div>
+      <div class="mitem"><span class="nm">Massagem Facial Lifting</span><span class="dots"></span><span class="pr">R$ 150</span></div>
+      <div class="mitem"><span class="nm">Microagulhamento</span><span class="dots"></span><span class="pr">R$ 320</span></div>
+      <div class="mitem"><span class="nm">Design de Sobrancelha</span><span class="dots"></span><span class="pr">R$ 70</span></div>
+      <div class="mitem"><span class="nm">Day Spa · Ritual Completo</span><span class="dots"></span><span class="pr">R$ 390</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE -->
+<section class="feat" id="experiencia">
+  <div class="wrap">
+    <div class="imgwrap"><img src="./assets/p_treatment.jpg" alt="Experiência de spa"></div>
+    <div>
+      <div class="eyebrow">A experiência Belle</div>
+      <h2>Mais que um tratamento, um <em>respiro</em></h2>
+      <p>Aromas, música baixa, toque acolhedor. Aqui o tempo desacelera enquanto a sua pele recebe o melhor. Você entra cansada e sai renovada — por dentro e por fora.</p>
+      <div class="pts">
+        <div class="pt"><b>+1.200</b><span>clientes apaixonadas</span></div>
+        <div class="pt"><b>4,9★</b><span>avaliação no Google</span></div>
+        <div class="pt"><b>100%</b><span>produtos veganos</span></div>
+        <div class="pt"><b>60min</b><span>de puro cuidado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="pad" id="depoimentos">
+  <div class="wrap">
+    <div class="sechead"><div class="eyebrow">Quem vive, ama</div><h2>O que elas <em>dizem</em></h2></div>
+    <div class="tgrid">
+      <div class="tcard"><div class="stars">★★★★★</div><p>"Minha pele nunca esteve tão bonita. Virei cliente fiel, vou todo mês sem falta."</p><div class="who">Júlia M.</div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"O ambiente é um sonho. Saio de lá leve, relaxada e com a pele iluminada."</p><div class="who">Carla S.</div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"Atendimento impecável e resultado de verdade. Recomendo de olhos fechados."</p><div class="who">Patrícia L.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contato">
+  <div class="wrap">
+    <div class="eyebrow">Sua pausa começa aqui</div>
+    <h2>Reserve seu momento <em>Belle</em></h2>
+    <p>Chame a gente no WhatsApp e garanta seu horário. As agendas enchem rápido — vem cuidar de você.</p>
+    <a href="https://wa.me/5599999999999?text=Oi!%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Belle%20Studio" class="btn btn-p">Agendar no WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand"><b>Belle</b> studio</div>
+        <p>Studio de skincare e estética. Onde o autocuidado vira ritual.</p>
+      </div>
+      <div class="col"><h4>Serviços</h4><a href="#">Limpeza de pele</a><a href="#">Peeling</a><a href="#">Sobrancelha</a><a href="#">Day spa</a></div>
+      <div class="col"><h4>Contato</h4><a href="#">Rua das Flores, 88 — sala 3</a><a href="#">(00) 90000-0000</a><a href="#">Ter a Sáb · 9h às 20h</a></div>
+    </div>
+    <div class="copy">© 2026 Belle Studio · Site exemplo</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5599999999999" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.99-1.045zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+</body>
+</html>

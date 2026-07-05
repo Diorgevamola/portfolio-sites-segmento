@@ -139,7 +139,7 @@ function waSvg(){return '<svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a
 
 function render(s){
   const f=FONTS[s.font]; const c=theme(s.t); const dark=!!s.t.dark;
-  const wa='https://wa.me/5599999999999?text='+encodeURIComponent('Olá! Vi o site da '+s.brand+' e quero saber mais.');
+  const wa='https://wa.me/5561994081617?text='+encodeURIComponent('Olá! Vi o site da '+s.brand+' e quero saber mais.');
   const svc=s.svc.map((x,i)=>`<div class="card"><div class="ic">${String(i+1).padStart(2,'0')}</div><h3>${x[0]}</h3><p>${x[1]}</p><div class="price">${x[2]}</div></div>`).join('');
   const pts=s.pts.map(p=>`<div class="stat"><div class="n">${p[0]}</div><div class="t">${p[1]}</div></div>`).join('');
   return `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -203,6 +203,13 @@ footer h4{font-family:${f.dispFam};font-size:1rem;margin-bottom:13px;color:var(-
 .copy{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);text-align:center;font-size:.82rem;color:var(--muted)}
 @media(max-width:840px){.foot{grid-template-columns:1fr;gap:24px}}
 .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:.3s}.wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+.mobile-stickybar{display:none}
+@media(max-width:820px){
+  .wa{display:none}
+  .mobile-stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;background:#25d366;color:#fff;text-align:center;justify-content:center;align-items:center;gap:8px;padding:14px 16px calc(14px + env(safe-area-inset-bottom));font-weight:700;font-size:.95rem;letter-spacing:.01em;box-shadow:0 -6px 20px rgba(0,0,0,.18)}
+  .mobile-stickybar svg{width:20px;height:20px;fill:#fff;flex:0 0 auto}
+  body{padding-bottom:64px}
+}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-copy>*{opacity:0;animation:rise .9s forwards}.hero-copy>*:nth-child(1){animation-delay:.05s}.hero-copy>*:nth-child(2){animation-delay:.2s}.hero-copy>*:nth-child(3){animation-delay:.35s}.hero-copy>*:nth-child(4){animation-delay:.5s}
 </style></head><body>
@@ -231,6 +238,7 @@ footer h4{font-family:${f.dispFam};font-size:1rem;margin-bottom:13px;color:var(-
 <div class="col"><h4>Contato</h4><a href="${wa}">WhatsApp</a><a href="#">(00) 90000-0000</a><a href="#">Atendimento Seg a Sáb</a></div></div>
 <div class="copy">© 2026 ${s.brand} · Site exemplo</div></div></footer>
 <a class="wa" href="${wa}" aria-label="WhatsApp">${waSvg()}</a>
+<a class="mobile-stickybar" href="${wa}" aria-label="Falar no WhatsApp">${waSvg()}Falar no WhatsApp agora</a>
 </body></html>`;
 }
 

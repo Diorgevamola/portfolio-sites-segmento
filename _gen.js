@@ -139,7 +139,7 @@ function waSvg(){return '<svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a
 
 function render(s){
   const f=FONTS[s.font]; const c=theme(s.t); const dark=!!s.t.dark;
-  const wa='https://wa.me/5561994081617?text='+encodeURIComponent('Olá! Vi o site da '+s.brand+' e quero saber mais.');
+  const wa='https://wa.me/5561995708293?text='+encodeURIComponent('Olá! Vi o site da '+s.brand+' e quero saber mais.');
   const svc=s.svc.map((x,i)=>`<div class="card"><div class="ic">${String(i+1).padStart(2,'0')}</div><h3>${x[0]}</h3><p>${x[1]}</p><div class="price">${x[2]}</div></div>`).join('');
   const pts=s.pts.map(p=>`<div class="stat"><div class="n">${p[0]}</div><div class="t">${p[1]}</div></div>`).join('');
   return `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">

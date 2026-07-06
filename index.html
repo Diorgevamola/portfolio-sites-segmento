@@ -40,11 +40,21 @@
   .clients{list-style:none;font-size:.9rem;margin-bottom:18px}
   .clients li{padding:4px 0 4px 16px;position:relative;color:#d8cdbb}
   .clients li:before{content:"›";position:absolute;left:0;color:var(--gold)}
-  .open{margin-top:auto;text-align:center;border:1px solid var(--gold);color:var(--gold);padding:11px;border-radius:4px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;transition:.3s}
-  .open:hover{background:var(--gold);color:var(--bg)}
+  .open{position:relative;overflow:hidden;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#e7c884,var(--gold) 45%,#b8912f);color:var(--bg);font-weight:600;padding:14px;border-radius:8px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 8px 22px rgba(198,160,74,.28);transition:transform .25s,box-shadow .25s,filter .25s}
+  .open:after{content:"→";display:inline-block;transition:transform .3s}
+  .open:before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .55s}
+  .card:hover .open{transform:translateY(-2px);box-shadow:0 14px 34px rgba(198,160,74,.5);filter:brightness(1.06)}
+  .card:hover .open:after{transform:translateX(5px)}
+  .card:hover .open:before{left:130%}
   .foot{text-align:center;padding:60px 24px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line);margin-top:60px}
   @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
+
+  /* Scroll reveal — leve e otimizado pra mobile */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1);will-change:opacity,transform}
+  .reveal.in{opacity:1;transform:none}
+  .cat .card.reveal{transition-delay:var(--d,0s)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}}
 
   /* WhatsApp CTAs */
   .wa-cta{display:inline-flex;align-items:center;gap:11px;background:#25d366;color:#08130b;font-family:'Jost',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.02em;padding:15px 30px;border-radius:50px;margin-top:28px;box-shadow:0 14px 34px rgba(37,211,102,.34);transition:transform .25s,box-shadow .25s}
@@ -87,13 +97,13 @@
       <div class="meta"><b>7 modelos</b></div>
     </div>
     <div class="grid">
-      <a class="card" href="01-lumiere-estetica-avancada.html"><div class="imgbox"><span class="style">Luxo · Dourado</span><img src="_preview-01-lumiere-estetica-avancada.png"></div><div class="b"><h3>Lumière</h3><div class="desc">Estética avançada e harmonização facial.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Harmonização facial</li><li>Biomédico esteta</li><li>Estética premium</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="02-derma-clinica-pele.html"><div class="imgbox"><span class="style">Clean · Clínico</span><img src="_preview-02-derma-clinica-pele.png"></div><div class="b"><h3>Dérma</h3><div class="desc">Clínica de pele e dermatologia estética.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Dermatologista</li><li>Clínica de pele/acne</li><li>Laser e rejuvenescimento</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="03-belle-studio-skincare.html"><div class="imgbox"><span class="style">Editorial · Nude</span><img src="_preview-03-belle-studio-skincare.png"></div><div class="b"><h3>Belle</h3><div class="desc">Studio de skincare e estética feminina.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Esteticista / studio</li><li>Sobrancelha & lash</li><li>Spa / day spa</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="04-dentista.html"><div class="imgbox"><span class="style">Clean · Teal</span><img src="_preview-04-dentista.png"></div><div class="b"><h3>OdontoVita</h3><div class="desc">Clínica odontológica moderna.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Dentista</li><li>Clínica odontológica</li><li>Ortodontia</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="05-fisioterapia.html"><div class="imgbox"><span class="style">Clean · Verde</span><img src="_preview-05-fisioterapia.png"></div><div class="b"><h3>Movimente</h3><div class="desc">Fisioterapia e pilates clínico.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Fisioterapeuta</li><li>Pilates clínico</li><li>Fisio esportiva</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="06-nutricao.html"><div class="imgbox"><span class="style">Editorial · Verde</span><img src="_preview-06-nutricao.png"></div><div class="b"><h3>Nutre</h3><div class="desc">Nutrição e bem-estar.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Nutricionista</li><li>Nutrição esportiva</li><li>Reeducação alimentar</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="07-psicologia.html"><div class="imgbox"><span class="style">Editorial · Lilás</span><img src="_preview-07-psicologia.png"></div><div class="b"><h3>Acolher</h3><div class="desc">Psicologia e terapia.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Psicólogo</li><li>Terapeuta</li><li>Terapia de casal</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="01-lumiere-estetica-avancada.html"><div class="imgbox"><span class="style">Luxo · Dourado</span><img src="_preview-01-lumiere-estetica-avancada.png"></div><div class="b"><h3>Lumière</h3><div class="desc">Estética avançada e harmonização facial.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Harmonização facial</li><li>Biomédico esteta</li><li>Estética premium</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="02-derma-clinica-pele.html"><div class="imgbox"><span class="style">Clean · Clínico</span><img src="_preview-02-derma-clinica-pele.png"></div><div class="b"><h3>Dérma</h3><div class="desc">Clínica de pele e dermatologia estética.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Dermatologista</li><li>Clínica de pele/acne</li><li>Laser e rejuvenescimento</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="03-belle-studio-skincare.html"><div class="imgbox"><span class="style">Editorial · Nude</span><img src="_preview-03-belle-studio-skincare.png"></div><div class="b"><h3>Belle</h3><div class="desc">Studio de skincare e estética feminina.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Esteticista / studio</li><li>Sobrancelha & lash</li><li>Spa / day spa</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="04-dentista.html"><div class="imgbox"><span class="style">Clean · Teal</span><img src="_preview-04-dentista.png"></div><div class="b"><h3>OdontoVita</h3><div class="desc">Clínica odontológica moderna.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Dentista</li><li>Clínica odontológica</li><li>Ortodontia</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="05-fisioterapia.html"><div class="imgbox"><span class="style">Clean · Verde</span><img src="_preview-05-fisioterapia.png"></div><div class="b"><h3>Movimente</h3><div class="desc">Fisioterapia e pilates clínico.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Fisioterapeuta</li><li>Pilates clínico</li><li>Fisio esportiva</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="06-nutricao.html"><div class="imgbox"><span class="style">Editorial · Verde</span><img src="_preview-06-nutricao.png"></div><div class="b"><h3>Nutre</h3><div class="desc">Nutrição e bem-estar.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Nutricionista</li><li>Nutrição esportiva</li><li>Reeducação alimentar</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="07-psicologia.html"><div class="imgbox"><span class="style">Editorial · Lilás</span><img src="_preview-07-psicologia.png"></div><div class="b"><h3>Acolher</h3><div class="desc">Psicologia e terapia.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Psicólogo</li><li>Terapeuta</li><li>Terapia de casal</li></ul><span class="open">Abrir site</span></div></a>
     </div>
   </section>
 
@@ -108,9 +118,9 @@
       <div class="meta"><b>3 modelos</b></div>
     </div>
     <div class="grid">
-      <a class="card" href="08-automotiva.html"><div class="imgbox"><span class="style">Dark · Vermelho</span><img src="_preview-08-automotiva.png"></div><div class="b"><h3>Apex Detail</h3><div class="desc">Estética automotiva premium.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Estética automotiva</li><li>Polimento / vitrificação</li><li>Película / envelopamento</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="09-reforma.html"><div class="imgbox"><span class="style">Dark · Âmbar</span><img src="_preview-09-reforma.png"></div><div class="b"><h3>Construrte</h3><div class="desc">Reformas e construção.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Empresa de reforma</li><li>Construtora pequena</li><li>Drywall / gesso</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="10-climatizacao.html"><div class="imgbox"><span class="style">Clean · Azul</span><img src="_preview-10-climatizacao.png"></div><div class="b"><h3>FrioMax</h3><div class="desc">Climatização e ar-condicionado.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Instalação de ar</li><li>Manutenção / PMOC</li><li>Refrigeração</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="08-automotiva.html"><div class="imgbox"><span class="style">Dark · Vermelho</span><img src="_preview-08-automotiva.png"></div><div class="b"><h3>Apex Detail</h3><div class="desc">Estética automotiva premium.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Estética automotiva</li><li>Polimento / vitrificação</li><li>Película / envelopamento</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="09-reforma.html"><div class="imgbox"><span class="style">Dark · Âmbar</span><img src="_preview-09-reforma.png"></div><div class="b"><h3>Construrte</h3><div class="desc">Reformas e construção.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Empresa de reforma</li><li>Construtora pequena</li><li>Drywall / gesso</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="10-climatizacao.html"><div class="imgbox"><span class="style">Clean · Azul</span><img src="_preview-10-climatizacao.png"></div><div class="b"><h3>FrioMax</h3><div class="desc">Climatização e ar-condicionado.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Instalação de ar</li><li>Manutenção / PMOC</li><li>Refrigeração</li></ul><span class="open">Abrir site</span></div></a>
     </div>
   </section>
 
@@ -125,8 +135,8 @@
       <div class="meta"><b>2 modelos</b></div>
     </div>
     <div class="grid">
-      <a class="card" href="11-advogado.html"><div class="imgbox"><span class="style">Dark · Navy/Dourado</span><img src="_preview-11-advogado.png"></div><div class="b"><h3>Drummond</h3><div class="desc">Advocacia e consultoria jurídica.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Advogado</li><li>Escritório de advocacia</li><li>Consultoria jurídica</li></ul><span class="open">Abrir site →</span></div></a>
-      <a class="card" href="12-arquiteto.html"><div class="imgbox"><span class="style">Light · Minimal</span><img src="_preview-12-arquiteto.png"></div><div class="b"><h3>Estúdio Linha</h3><div class="desc">Arquitetura e interiores.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Arquiteto</li><li>Designer de interiores</li><li>Estúdio de projetos</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="11-advogado.html"><div class="imgbox"><span class="style">Dark · Navy/Dourado</span><img src="_preview-11-advogado.png"></div><div class="b"><h3>Drummond</h3><div class="desc">Advocacia e consultoria jurídica.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Advogado</li><li>Escritório de advocacia</li><li>Consultoria jurídica</li></ul><span class="open">Abrir site</span></div></a>
+      <a class="card" href="12-arquiteto.html"><div class="imgbox"><span class="style">Light · Minimal</span><img src="_preview-12-arquiteto.png"></div><div class="b"><h3>Estúdio Linha</h3><div class="desc">Arquitetura e interiores.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Arquiteto</li><li>Designer de interiores</li><li>Estúdio de projetos</li></ul><span class="open">Abrir site</span></div></a>
     </div>
   </section>
 
@@ -141,7 +151,7 @@
       <div class="meta"><b>1 modelo</b></div>
     </div>
     <div class="grid">
-      <a class="card" href="13-fotografia.html"><div class="imgbox"><span class="style">Dark · Dourado</span><img src="_preview-13-fotografia.png"></div><div class="b"><h3>Lentes & Luz</h3><div class="desc">Fotografia profissional.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Fotógrafo</li><li>Casamentos / ensaios</li><li>Eventos & corporativo</li></ul><span class="open">Abrir site →</span></div></a>
+      <a class="card" href="13-fotografia.html"><div class="imgbox"><span class="style">Dark · Dourado</span><img src="_preview-13-fotografia.png"></div><div class="b"><h3>Lentes & Luz</h3><div class="desc">Fotografia profissional.</div><div class="ideal">Ideal para</div><ul class="clients"><li>Fotógrafo</li><li>Casamentos / ensaios</li><li>Eventos & corporativo</li></ul><span class="open">Abrir site</span></div></a>
     </div>
   </section>
 
@@ -161,5 +171,32 @@
   <span class="lbl">Fale conosco</span>
 </a>
 
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var targets = document.querySelectorAll('.cathead, .card, .foot, .top .wa-cta');
+  targets.forEach(function(el){ el.classList.add('reveal'); });
+
+  // Stagger dos cards dentro de cada grid (leve no mobile)
+  document.querySelectorAll('.grid').forEach(function(grid){
+    grid.querySelectorAll('.card').forEach(function(card, i){
+      card.style.setProperty('--d', Math.min(i * 0.07, 0.35) + 's');
+    });
+  });
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

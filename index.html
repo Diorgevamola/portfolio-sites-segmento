@@ -216,5 +216,13 @@ src="https://www.facebook.com/tr?id=1522325915226286&ev=PageView&noscript=1"
   targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
+<!-- Meta Pixel — evento Lead no clique do WhatsApp -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+  if (a && typeof fbq === 'function') { fbq('track', 'Lead'); }
+}, true);
+</script>
 </body>
+
 </html>
